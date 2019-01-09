@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objet 1</title>
+</head>
+<body>
+    <script>
+        const stylo = {         /* ne pas oublier le signe = */
+            type: 'bille',      /* attention à la syntaxe avec les :, les '' et la virgule */
+            couleur: 'bleu',
+            marque: 'bic',
+        };
+
+        console.log(stylo.couleur);
+
+        /* syntaxe : attention les '' sont remplacés par des ` et syntaxe ${} */
+        console.log(`J\'écris avec un stylo ${stylo.type} de couleur ${stylo.couleur}`);
+
+        /* syntaxe normale avec la concaténateur '+' */
+        console.log('j\'écris avec un stylo ' +  stylo.type);
+
+        /* --------------------- modification de l'objet ------------------------------ */
+        /* Ajout d'une propriété */
+        stylo.prix = 10;
+        console.log('Ce stylo coûte ' + stylo.prix + ' euros');
+    </script>
+    
+</body>
+</html>
