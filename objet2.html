@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objet 2</title>
+</head>
+<body>
+    <script>
+        const aurora = {   /* ATTENTION AU SIGNE = !!!! */
+            nom: 'Aurora',
+            force: 50,
+            sante: 150
+        };
+
+        console.log('Aurora a une santé de ' + aurora.sante + ' et une force de ' + aurora.force + '.');
+        aurora.sante-=30;
+        console.log('Aurora est blessée, sa santé est maintenant de ' + aurora.sante + '.');
+        console.log('Aurora a trouvé un bracelet de force.');
+        aurora.force+=10;
+        console.log('Aurora a maintenant une force de ' + aurora.force);
+        console.log('Aurora a une santé de ' + aurora.sante + ' et une force de ' + aurora.force + '.');
+
+        /* --------------------------- DUPLICATION DE CODE --> trop de console.log() ---------------- */
+        console.log('Création d\'une fonction');
+        function decrire_f(personnage){
+            return (personnage.nom + ' a ' + personnage.sante + ' de vie et une force de ' + personnage.force + '.');
+        }
+
+        console.log(decrire_f(aurora)); /* pas de console.log dans la fonction */
+
+        /* ---------------------------- INSERTION DE LA FONCTION DANS L'OBJET POUR CREER UNE METHODE ---------- */
+        /* ----------------------------------- fichier objet3.html -------------------------------- */
+
+
+    </script>
+    
+</body>
+</html>

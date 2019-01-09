@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objet </title>
+</head>
+<body>
+    <script>
+        const aurora = {   /* ATTENTION AU SIGNE = !!!! */
+            nom: 'Aurora',
+            force: 50,
+            sante: 150,
+
+            /* création de la méthode 'décrire' */
+
+            decrire() {     /* syntaxe !!!! */
+                return (this.nom + ' a ' + this.sante + ' points de vie, une force de ' + this.force + ' et une expérience de ' + aurora.xp );
+            }
+        };
+
+        aurora.xp = 0;
+        console.log(aurora.decrire());
+
+    </script>
+    
+</body>
+</html>
