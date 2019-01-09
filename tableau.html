@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tableau </title>
+</head>
+
+<body>
+    <script>
+        /* Création d'un tableau de prénoms */
+        const prenoms = [ /* NE PAS OUBLIER DLE SIGNE = */
+            'nath', 'dom', 'tom', 'manon'
+        ];
+
+        console.log(prenoms[2]);
+        /* nombre d'items dans un tableau */
+        console.log(prenoms.length);
+
+        /* ------------------ PARCOURIR UN TABLEAU AVEC FOR --------------- */
+        for (let i = 0; i < prenoms.length; i++) { /* ATTENTION ; entre les instructions */
+            console.log(prenoms[i]);
+        }
+
+        /* ------------------ PARCOURIR UN TABLEAU AVEC forEach --------------- */
+        prenoms.forEach(item => { console.log(item); });
+
+        /* ------------------ PARCOURIR UN TABLEAU AVEC for-of -> sans itérateur --------------- */
+        for (const item of prenoms) { console.log(item);}
+
+        /* ---------------------- Ajouter un prénom A LA FIN du tableau METHODE push() ---------------- */
+        prenoms.push('Odile');
+        for(const item of prenoms) {console.log(item)};
+
+        /* ---------------------- Ajouter un prénom AU DEBUT du tableau METHODE unshift() ---------------- */
+        prenoms.unshift('Lucie');
+        prenoms.forEach(item => {console.log(item);})
+
+        /* ----------- supprimer LE DERNIER ELEMENT d'un tableau grâce à la méthode  pop() ------------ */
+        prenoms.pop();
+
+        /* -------- splice() supprime plusieurs éléments: 1° paramètre = 1° indice à supprimer, et le 2° = nombre ---- */
+        prenoms.splice(0, 2);
+        for (const item of prenoms) {console.log(item);}
+
+    </script>
+
+
+</body>
+
+</html>

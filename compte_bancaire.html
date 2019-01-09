@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objet 3 </title>
+</head>
+<body>
+    <script>
+        /* Complétez ce programme pour créer un objet compte ayant les propriétés suivantes :
+    Une propriété titulaire valant "Alex".
+    Une propriété solde valant initialement 0.
+    Une méthode crediter() ajoutant le montant passé en paramètre (éventuellement négatif) au solde du compte.
+    Une méthode decrire() renvoyant la description du compte.
+    Utilisez cet objet pour afficher sa description, le créditer de 250, puis le débiter de 80, et enfin afficher de nouveau sa description. */
+
+    const compte = {
+        titulaire: 'Alex',
+        solde: 0,
+
+        crediter(montant){
+            return this.solde+= montant;
+        },
+        debiter(montant){
+            return this.solde-= montant;
+        },
+        decrire (){
+            console.log ('Le solde du compte de ' + this.titulaire + ' est de ' + this.solde + ' euros.');
+        }
+    }
+
+    compte.crediter(250);
+    compte.decrire();
+    compte.debiter(80);
+    compte.decrire();
+
+    </script>
+    
+</body>
+</html>
