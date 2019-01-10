@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chaînes 2</title>
+</head>
+
+<body>
+    <script>
+        /* Complétez le programme en y ajoutant une fonction compterVoyelles() qui prend un mot en paramètre et renvoie son nombre de voyelles.
+
+        Une voyelle en majuscules reste une voyelle... A vous d'en tenir compte. En revanche, vous n'êtes pas obligé.e de gérer les accents. */
+
+        let compteur = 0;
+
+        function compterVoyelles (mot)
+        {
+                let motLower = mot.toLowerCase();
+                /* console.log(motLower); */
+            for (let i=0; i<motLower.length; i++)
+            {
+                if(motLower[i] === 'a' || motLower[i] === 'o' || motLower[i] === 'u' || motLower[i] === 'e' || motLower[i] === 'i' || motLower[i] === 'y' )
+                {
+                    compteur++;
+                    /* console.log(compteur); */
+                }
+            }
+            return compteur;
+        }
+
+        let total= compterVoyelles('GRaaaOOO');
+        console.log(total);
+
+    </script>
+
+</body>
+
+</html>

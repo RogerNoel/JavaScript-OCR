@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO 1</title>
+</head>
+
+<body>
+    <script>
+        class Personnage {
+            constructor(nom, sante, force) {
+                this.nom = nom;
+                this.sante = sante;
+                this.force = force;
+                this.xp = 0;
+            }
+
+            decrire() {
+                return (this.nom + ' a ' + this.sante + ' points de vie, ' + this.force + ' en force et ' + this.xp + ' points d\'expérience.');
+            }
+        }
+
+        const aurora = new Personnage('Aurora', 150, 25);
+        console.log(aurora.decrire());
+
+    </script>
+</body>
+
+</html>

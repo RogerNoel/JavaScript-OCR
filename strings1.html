@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chaînes 1</title>
+</head>
+
+<body>
+    <script>
+        console.log('Roger'.length);
+
+        let prenom = 'Roger';
+        console.log(prenom.toUpperCase());
+
+        console.log(prenom[2]);
+
+        /* La méthode  Array.from()  transforme une chaîne en tableau qui peut être parcouru avec la méthode  forEach(). */
+        let tableauPrenom = Array.from(prenom);
+        tableauPrenom.forEach(element => {
+            console.log(element);
+
+        });
+
+        /* La méthode  indexOf()  prend en paramètre la sous-chaîne recherchée. 
+        Si cette valeur est présente dans la chaîne, elle renvoie l'indice de sa première occurrence. 
+        Sinon, elle renvoie -1. */
+
+        console.log(prenom.indexOf('og'));
+
+        /* Une chaîne de caractères est parfois composée de plusieurs sous-parties séparées par un caractère particulier (point, tiret, point-virgule, etc). 
+        Dans ce cas, on peut obtenir toutes ces parties à l'aide de la méthode  split(). 
+        Elle prend en paramètre le séparateur et renvoie un tableau contenant les sous-parties. */
+
+        const listeMois = "Jan,Fev,Mar,Avr,Mai,Jun,Jul,Aou,Sep,Oct,Nov,Dec";
+        const mois = listeMois.split(",");
+        console.log(mois[0]); 
+        console.log(mois[11]);
+    </script>
+
+</body>
+
+</html>

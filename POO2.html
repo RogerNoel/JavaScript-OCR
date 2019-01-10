@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO 1</title>
+</head>
+
+<body>
+    <script>
+        class Personnage /* ATTENTION un objet prend = mais pas une classe */
+        {
+            constructor(nom, sante, force)
+            {
+                this.nom = nom;
+                this.sante = sante;
+                this.force = force;
+                this.xp = 0;
+            }
+
+            attaquer(cible) 
+            {
+                if (this.sante > 0) {
+                    const degats = this.force;
+                    /* la cible est un objet qui a aussi un nom, une santé, etc  d'où 'cible.nom' */
+                    console.log(this.nom + ' attaque ' + cible.nom + ' et lui inflige ' + degats + ' points de dégâts.');
+                    cible.sante-=degats;
+
+                    if (cible.sante > 0)
+                    {
+                        console.log(cible.nom + ' a encore ' + cible.sante + ' points de vie.');
+                    }
+                    else
+                    {
+                        cible.sante = 0; /* pour ne pas que santé descende sous 0 ? */
+                        const bonusXP = 10;
+                        console.log(this.nom + ' a tué ' + cible.nom + ' et gagne ' + bonusXP + ' points d\'XP.');
+                        this.xp+= bonusXP;
+                    }
+                }
+                else
+                {
+                    console.log(this.nom + ' est mort et les morts n\'attaquent plus');
+                }
+            }
+
+            decrire ()
+            {
+                return (this.nom + ' a ' + this.sante + ' points de vie, ' + this.force + ' points de force et a ' + this.xp + ' points d\'expérience');
+            }
+        }
+
+       /*  --------------------- CREATION DE 2 PERSOS ET D'UN MOB ---------------------------- */
+
+       const nath = new Personnage('Nath', 100, 25);
+       const tommy = new Personnage('Tom', 100, 35);
+       const mob = new Personnage('Grokon', 80, 10);
+
+       console.log(nath.decrire());
+       console.log(tommy.decrire());
+
+       /* ------------------------------ ON PASSE A L'ATTAQUE ----------------------------- */
+
+       mob.attaquer(nath);
+       mob.attaquer(tommy);
+       nath.attaquer(mob);
+       tommy.attaquer(mob);
+       mob.attaquer(nath);
+       mob.attaquer(tommy);
+       nath.attaquer(mob);
+       mob.attaquer(tommy);
+    </script>
+</body>
+
+</html>
