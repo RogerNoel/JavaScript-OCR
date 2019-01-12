@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO chien</title>
+</head>
+
+<body>
+    <script>
+
+        /* TODO -> créer la classe "Chien" */
+
+        class Chien /* créer la classe - attention majuscule */
+        {
+            constructor (nom, race, taille)
+            {
+                this.nom = nom;
+                this.race = race;
+                this.taille = taille;
+            }
+
+            /* methodes */
+
+            decrire()
+            {
+                return this.nom + ' est un ' + this.race + ' mesurant ' + this.taille + ' cm.';
+            }
+
+            aboyer()
+            {
+                return 'wouf wouf !';
+            }
+        }
+        /* -------------------------------------------- end toto ------------------ */
+        
+        const crockdur = new Chien("Crockdur", "mâtin de Naples", 75);
+        // "Crockdur est un mâtin de Naples mesurant 75 cm"
+        console.log(crockdur.decrire());
+        // "Tiens, un chat ! Crockdur aboie : Grrr ! Grrr !"
+        console.log(`Tiens, un chat ! ${crockdur.nom} aboie : ${crockdur.aboyer()}`);
+
+        const milou = new Chien("Milou", "fox-terrier", 26);
+        // "Milou est un fox-terrier mesurant 26 cm"
+        console.log(milou.decrire());
+        // "Tiens, un chat ! Milou aboie : Wouaf ! Wouaf !"
+        console.log(`Tiens, un chat ! ${milou.nom} aboie : ${milou.aboyer()}`);
+    </script>
+</body>
+
+</html>
