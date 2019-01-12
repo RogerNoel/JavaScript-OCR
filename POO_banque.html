@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO banque</title>
+</head>
+
+<body>
+    <script>
+/*         Un compte bancaire sera modélisé par une classe définie comme suit :
+            - Une propriété titulaire initialisée par le constructeur.
+            - Une propriété solde valant initialement 0.
+            - Une méthode crediter() ajoutant le montant passé en paramètre (éventuellement négatif) au solde du compte.
+            - Une méthode decrire() renvoyant la description du compte.
+            - Ecrivez un programme qui crée 3 comptes bancaires, l'un appartenant à Alex, le deuxième à CLovis et le troisième à Marco. Stockez ces comptes dans un tableau.
+            - Ensuite, le programme crédite 1000 € et affiche la description de chacun des comptes. */
+
+            class CompteBancaire {
+                constructor(titulaire) {
+                    this.titulaire = titulaire;
+                    this.solde = 0; 
+                }
+
+                crediter(montant){
+                    return this.solde+= montant;
+                }
+
+                decrire() {
+                    console.log('Le solde du compte de ' + this.titulaire + ' est de : ' + this.solde);
+                }
+            }
+
+            const alex = new CompteBancaire ('Alex');
+            const clovis = new CompteBancaire('Clovis');
+            const nath = new CompteBancaire('Nath');
+
+            const comptes = [alex, clovis, nath]; /* ATTENTION array avec [ !!!] */
+
+            comptes.forEach(compte => {
+                compte.crediter(1000);
+                compte.decrire();
+                /* console.log(compte); */
+            });
+
+            clovis.crediter(500);
+
+            clovis.decrire();
+
+    </script>
+</body>
+
+</html>
