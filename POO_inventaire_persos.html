@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO inventaire persos</title>
+</head>
+
+<body>
+    <script>
+        /*  Complétez ce programme issu du cours pour y ajouter la gestion de l'inventaire des personnages. Voici les améliorations à intégrer :
+            - L'inventaire d'un personnage se compose d'un nombre de pièces d'or et d'un nombre de clés.
+            - Tous les personnages possèdent initialement 10 pièces d'or et une clé.
+            - L'inventaire doit être affiché dans la description d'un joueur.
+            - Lorsqu'un personnage tue un adversaire, il récupère dans son propre inventaire le nombre de pièces d'or et de clés de cet adversaire. */
+
+        // Ajoutez votre code ici
+
+        class Personnage {
+            constructor(nom, sante, force) {
+                this.nom = nom;
+                this.sante = sante;
+                this.force = force;
+                this.xp = 0;
+                this.argent = 10;
+                this.cles = 1;
+            }
+
+            decrire() {
+                return this.nom + ' a ' + this.sante + ' points de vie, ' + this.force + ' en force et ' + this.xp +
+                    ' points d\'expérience, ' + this.argent + ' pièces d\'or et ' + this.cles + ' clé(s).';
+            }
+
+            attaquer(adversaire) {
+                if (this.sante > 0) {
+                    const degats = this.force;
+                    adversaire.sante -= degats;
+                    adversaire.decrire();
+                } else {
+                    this.sante = 0;
+                    return this.nom + ' est mort.';
+                }
+
+                if (adversaire.sante <= 0) {
+                    this.xp+= 10;
+                    this.argent+= adversaire.argent;
+                    this.cles+= adversaire.cles;
+                    return 'le monstre est tué.';
+                }
+            }
+        }
+
+        const aurora = new Personnage("Aurora", 150, 25);
+
+        // "Aurora a 150 points de vie, 25 en force et 0 points d'expérience, 10 pièces d'or et 1 clé(s)"
+        console.log(aurora.decrire());
+
+        const monstre = new Personnage("ZogZog", 20, 10);
+        monstre.attaquer(aurora);
+        aurora.attaquer(monstre); // Le monstre est tué
+        // "Aurora a 140 points de vie, 25 en force et 10 points d'expérience, 20 pièces d'or et 2 clé(s)"
+        console.log(aurora.decrire());
+    </script>
+</body>
+
+</html>
